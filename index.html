@@ -1,1 +1,68 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Battle for Embolia - Build Planner</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <div class="planner-container">
+        <!-- Selector de Personaje -->
+        <header class="planner-header">
+            <h1>Battle for Embolia: Build Planner</h1>
+            <div class="character-selector">
+                <button class="char-btn active" data-char="ninja">Ninja</button>
+                <button class="char-btn" data-char="guerrero" disabled>Guerrero Zombie (Próximamente)</button>
+                <button class="char-btn" data-char="mago" disabled>Mago Oscuro (Próximamente)</button>
+            </div>
+            <div class="level-control">
+                <label for="char-level">Nivel: <span id="level-val">1</span>/50</label>
+                <input type="range" id="char-level" min="1" max="50" value="1">
+            </div>
+        </header>
 
+        <main class="planner-grid">
+            <!-- Columna Izquierda: Habilidades -->
+            <section class="panel skills-panel">
+                <h2>Habilidades (Puntos: <span id="skill-points">50</span>)</h2>
+                <div id="skills-container">
+                    <!-- Las habilidades del Ninja se inyectarán aquí -->
+                </div>
+            </section>
+
+            <!-- Columna Central: Equipamiento -->
+            <section class="panel equipment-panel">
+                <h2>Equipamiento</h2>
+                <div class="equipment-grid" id="equipment-slots">
+                    <!-- Slots de armadura, armas, etc. -->
+                    <div class="slot" data-slot="head"></div>
+                    <div class="slot" data-slot="chest"></div>
+                    <div class="slot" data-slot="weapon1"></div>
+                    <div class="slot" data-slot="weapon2"></div>
+                    <div class="slot" data-slot="boots"></div>
+                    <div class="slot" data-slot="ring1"></div>
+                    <div class="slot" data-slot="ring2"></div>
+                </div>
+                <div class="stats-box">
+                    <h3>Estadísticas del Personaje</h3>
+                    <ul id="stats-list">
+                        <!-- Estadísticas calculadas dinámicamente -->
+                    </ul>
+                </div>
+            </section>
+
+            <!-- Columna Derecha: Inventario / Editor de Items -->
+            <section class="panel inventory-panel">
+                <h2>Inventario / Editor</h2>
+                <div class="inventory-grid" id="inventory-grid">
+                    <!-- Slots de inventario de muestra -->
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <script src="js/ninja.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>
