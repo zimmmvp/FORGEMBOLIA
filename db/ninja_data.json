@@ -1,1 +1,91 @@
-
+{
+  "name": "Ninja",
+  "max_level": 50,
+  "max_skill_points": 50,
+  "base_stats": {
+    "vida_maxima": 120,
+    "mana_maxima": 110,
+    "ataque": 11,
+    "defensa": 5,
+    "critico": 20,
+    "poder_critico": 20
+  },
+  "stat_scaling": {
+    "vida_maxima_per_level": 10,
+    "mana_maxima_per_level": 15,
+    "ataque_per_level": 1.5,
+    "defensa_per_level": 1
+  },
+  "skills": [
+    {
+      "id": 1,
+      "name": "Golpe de Combo",
+      "max_points": 5,
+      "description": "Golpea al enemigo nivel 1 (Ataque). Comienza un COMBO.",
+      "img": "img/ninja/golpe_combo.png"
+    },
+    {
+      "id": 2,
+      "name": "Sin Escape",
+      "max_points": 5,
+      "description": "Tus ataques no pueden ser evitados por otros jugadores.",
+      "img": "img/ninja/sin_escape.png"
+    },
+    {
+      "id": 3,
+      "name": "Combo de Dagas Dobles",
+      "max_points": 5,
+      "description": "Permite usar COMBO. Puedes hacer más combos.",
+      "img": "img/ninja/dagas_dobles.png"
+    },
+    {
+      "id": 4,
+      "name": "Golpe Salvaje",
+      "max_points": 5,
+      "description": "Golpea al enemigo por 16/ataque. Daño crítico aumentado.",
+      "img": "img/ninja/golpe_salvaje.png"
+    },
+    {
+      "id": 5,
+      "name": "Alma de Sombra",
+      "max_points": 5,
+      "description": "Aumenta la velocidad de movimiento con Armadura Ligera.",
+      "img": "img/ninja/alma_sombra.png"
+    },
+    {
+      "id": 6,
+      "name": "Golpe de Sombra Nivel",
+      "max_points": 5,
+      "description": "Golpea al enemigo por 16/ataque. En Combo, próximo ataque evadido.",
+      "img": "img/ninja/golpe_sombra.png"
+    },
+    {
+      "id": 7,
+      "name": "Reflejo Mortal",
+      "max_points": 5,
+      "description": "Un porcentaje de evasión se suma a tu daño de ataque.",
+      "img": "img/ninja/reflejo_mortal.png"
+    },
+    {
+      "id": 8,
+      "name": "Evasión Mística",
+      "max_points": 5,
+      "description": "Cada vez que evadas un golpe, curas 46 de vida.",
+      "img": "img/ninja/evasion_mistica.png"
+    },
+    {
+      "id": 9,
+      "name": "Colmillo Azul",
+      "max_points": 5,
+      "description": "Recupera de maná cuando realizas un golpe crítico.",
+      "img": "img/ninja/colmillo_azul.png"
+    },
+    {
+      "id": 10,
+      "name": "Golpe Final / Definitiva",
+      "max_points": 5,
+      "description": "Consume todos los puntos de combo para hacer más daño.",
+      "img": "img/ninja/golpe_final.png"
+    }
+  ]
+}
