@@ -21,7 +21,7 @@
       "id": 1,
       "name": "Golpe de Combo",
       "max_points": 5,
-      "description": "Golpea al enemigo nivel 1 (Ataque). Comienza un COMBO.",
+      "description": "Golpea al enemigo por 25 (Ataque). Confirma un COMBO.",
       "img": "img/ninja/golpe_combo.png"
     },
     {
@@ -35,57 +35,99 @@
       "id": 3,
       "name": "Combo de Dagas Dobles",
       "max_points": 5,
-      "description": "Permite usar COMBO. Puedes hacer más combos.",
+      "description": "[Requiere el uso de dagas dobles] Permite usar COMBO. Puedes hacer más combos.",
       "img": "img/ninja/dagas_dobles.png"
     },
     {
       "id": 4,
       "name": "Golpe Salvaje",
       "max_points": 5,
-      "description": "Golpea al enemigo por 16/ataque. Daño crítico aumentado.",
+      "description": "[Requiere Nivel 4] Golpea al enemigo por 16/ataque. En Combo: aumenta alado/constante el poder crítico entre 20% y +150% para el próximo golpe",
       "img": "img/ninja/golpe_salvaje.png"
     },
     {
       "id": 5,
       "name": "Alma de Sombra",
       "max_points": 5,
-      "description": "Aumenta la velocidad de movimiento con Armadura Ligera.",
+      "description": "[Requiere Nivel 4] [Requiere Armadura Ligera] Aumenta la velocidad de movimiento en +12% y tu evasión en +1.",
       "img": "img/ninja/alma_sombra.png"
     },
     {
       "id": 6,
-      "name": "Golpe de Sombra Nivel",
+      "name": "Golpe de Sombra",
       "max_points": 5,
-      "description": "Golpea al enemigo por 16/ataque. En Combo, próximo ataque evadido.",
+      "description": "[Requiere Nivel 6] Golpea al enemigo por 25(Ataque). En Combo: el próximo ataque será evadido.",
       "img": "img/ninja/golpe_sombra.png"
     },
     {
       "id": 7,
       "name": "Reflejo Mortal",
       "max_points": 5,
-      "description": "Un porcentaje de evasión se suma a tu daño de ataque.",
+      "description": "[Requiere Nivel 7] Aumenta el a probabilidad de golpe crítico y crítico mágico durante 20 minutos para todo el grupo.",
       "img": "img/ninja/reflejo_mortal.png"
     },
     {
       "id": 8,
       "name": "Evasión Mística",
       "max_points": 5,
-      "description": "Cada vez que evadas un golpe, curas 46 de vida.",
+      "description": "[Requiere Nivel 8] [Requiere Armadura Ligera] Cada vez que evadas un golpe, te curará +6 de Vida.",
       "img": "img/ninja/evasion_mistica.png"
     },
     {
       "id": 9,
       "name": "Colmillo Azul",
       "max_points": 5,
-      "description": "Recupera de maná cuando realizas un golpe crítico.",
+      "description": "[Requiere Nivel 9] [Requiere Armadura Ligera] Recupera de Maná cuando realizas un golpe crítico.",
       "img": "img/ninja/colmillo_azul.png"
     },
     {
       "id": 10,
-      "name": "Golpe Final / Definitiva",
+      "name": "Golpe Final",
       "max_points": 5,
-      "description": "Consume todos los puntos de combo para hacer más daño.",
+      "description": "[Requiere Nivel 10] Golpea al enemigo por 16(ataque). Consume todos los puntos de combo para hacer más daño por cada uno consumido.",
       "img": "img/ninja/golpe_final.png"
+    },
+    {
+      "id": 11,
+      "name": "Técnica Definitiva",
+      "max_points": 5,
+      "description": "[Requiere Nivel 10] Se vuelve invulnerable al daño durante 6 segundos.",
+      "img": "img/ninja/tecnica_definitiva.png"
+    },
+    {
+      "id": 12,
+      "name": "Repulsión Estática",
+      "max_points": 5,
+      "description": "[Requiere Nivel 12] Cuando recibes un golpe, un rayo cae en el área, infligiendo daño a todos los monstruos cercanos por 16 (Ataque).",
+      "img": "img/ninja/repulsion_estatica.png"
+    },
+    {
+      "id": 13,
+      "name": "Habilidad 13",
+      "max_points": 5,
+      "description": "Espacio reservado para habilidad adicional.",
+      "img": "img/ninja/habilidad_13.png"
+    },
+    {
+      "id": 14,
+      "name": "Habilidad 14",
+      "max_points": 5,
+      "description": "Espacio reservado para habilidad adicional.",
+      "img": "img/ninja/habilidad_14.png"
+    },
+    {
+      "id": 15,
+      "name": "Habilidad 15",
+      "max_points": 5,
+      "description": "Espacio reservado para habilidad adicional.",
+      "img": "img/ninja/habilidad_15.png"
+    },
+    {
+      "id": 16,
+      "name": "Habilidad 16",
+      "max_points": 5,
+      "description": "Espacio reservado para habilidad adicional.",
+      "img": "img/ninja/habilidad_16.png"
     }
   ]
 }
