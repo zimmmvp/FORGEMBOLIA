@@ -3,66 +3,174 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Battle for Embolia - Build Planner</title>
-    <link rel="stylesheet" href="css/styles.css">
+    <title>Battle for Embolia - Planificador de Builds (Ninja)</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #121212;
+            color: #ffffff;
+            margin: 0;
+            padding: 20px;
+        }
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            background: #1e1e1e;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.5);
+        }
+        header {
+            text-align: center;
+            border-bottom: 1px solid #333;
+            padding-bottom: 10px;
+            margin-bottom: 20px;
+        }
+        .points-info {
+            font-size: 1.2rem;
+            margin-bottom: 20px;
+            background: #2a2a2a;
+            padding: 10px;
+            border-radius: 5px;
+            text-align: center;
+        }
+        .skill-card {
+            background: #2a2a2a;
+            border: 1px solid #3d3d3d;
+            padding: 15px;
+            border-radius: 6px;
+            margin-bottom: 15px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .skill-details h3 {
+            margin: 0 0 5px 0;
+            color: #4da6ff;
+        }
+        .skill-details p {
+            margin: 0;
+            font-size: 0.9rem;
+            color: #b0b0b0;
+        }
+        .skill-controls {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        button {
+            background-color: #4da6ff;
+            color: white;
+            border: none;
+            padding: 8px 12px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-weight: bold;
+        }
+        button:hover {
+            background-color: #3399ff;
+        }
+        button:disabled {
+            background-color: #444;
+            color: #777;
+            cursor: not-allowed;
+        }
+    </style>
 </head>
 <body>
-    <div class="planner-container">
-        <!-- Selector de Personaje -->
-        <header class="planner-header">
-            <h1>Battle for Embolia: Build Planner</h1>
-            <div class="character-selector">
-                <button class="char-btn active" data-char="ninja">Ninja</button>
-                <button class="char-btn" data-char="guerrero" disabled>Guerrero Zombie (Próximamente)</button>
-                <button class="char-btn" data-char="mago" disabled>Mago Oscuro (Próximamente)</button>
-            </div>
-            <div class="level-control">
-                <label for="char-level">Nivel: <span id="level-val">1</span>/50</label>
-                <input type="range" id="char-level" min="1" max="50" value="1">
-            </div>
+
+    <div class="container">
+        <header>
+            <h1>Forja de Builds: Ninja</h1>
+            <p>Battle for Embolia</p>
         </header>
 
-        <main class="planner-grid">
-            <!-- Columna Izquierda: Habilidades -->
-            <section class="panel skills-panel">
-                <h2>Habilidades (Puntos: <span id="skill-points">50</span>)</h2>
-                <div id="skills-container">
-                    <!-- Las habilidades del Ninja se inyectarán aquí -->
-                </div>
-            </section>
+        <div class="points-info">
+            Puntos Disponibles: <span id="remaining-points">15</span> / <span id="max-points">15</span>
+        </div>
 
-            <!-- Columna Central: Equipamiento -->
-            <section class="panel equipment-panel">
-                <h2>Equipamiento</h2>
-                <div class="equipment-grid" id="equipment-slots">
-                    <!-- Slots de armadura, armas, etc. -->
-                    <div class="slot" data-slot="head"></div>
-                    <div class="slot" data-slot="chest"></div>
-                    <div class="slot" data-slot="weapon1"></div>
-                    <div class="slot" data-slot="weapon2"></div>
-                    <div class="slot" data-slot="boots"></div>
-                    <div class="slot" data-slot="ring1"></div>
-                    <div class="slot" data-slot="ring2"></div>
-                </div>
-                <div class="stats-box">
-                    <h3>Estadísticas del Personaje</h3>
-                    <ul id="stats-list">
-                        <!-- Estadísticas calculadas dinámicamente -->
-                    </ul>
-                </div>
-            </section>
-
-            <!-- Columna Derecha: Inventario / Editor de Items -->
-            <section class="panel inventory-panel">
-                <h2>Inventario / Editor</h2>
-                <div class="inventory-grid" id="inventory-grid">
-                    <!-- Slots de inventario de muestra -->
-                </div>
-            </section>
-        </main>
+        <div id="skills-container">
+            <!-- Las habilidades se inyectarán dinámicamente aquí -->
+        </div>
     </div>
 
-    <script src="js/ninja.js"></script>
-    <script src="js/main.js"></script>
+    <script>
+        // 1. Lógica del Builder (La que creamos antes)
+        class NinjaBuilder {
+            constructor(maxPoints = 15) {
+                this.maxPoints = maxPoints;
+                this.spentPoints = 0;
+                this.skills = {
+                    "soul_rush": { name: "Soul Rush", desc: "Ataque rápido y velocidad.", currentLevel: 0, maxLevel: 5, cost: 1 },
+                    "mana_damage": { name: "Mana Damage", desc: "Convierte daño físico en maná.", currentLevel: 0, maxLevel: 3, cost: 2 },
+                    "soul_vortex": { name: "Soul Vortex", desc: "Vórtice que atrae enemigos.", currentLevel: 0, maxLevel: 1, cost: 5 }
+                };
+            }
+
+            allocatePoint(id) {
+                const skill = this.skills[id];
+                if (skill && skill.currentLevel < skill.maxLevel && (this.spentPoints + skill.cost) <= this.maxPoints) {
+                    skill.currentLevel++;
+                    this.spentPoints += skill.cost;
+                    return true;
+                }
+                return false;
+            }
+
+            removePoint(id) {
+                const skill = this.skills[id];
+                if (skill && skill.currentLevel > 0) {
+                    skill.currentLevel--;
+                    this.spentPoints -= skill.cost;
+                    return true;
+                }
+                return false;
+            }
+        }
+
+        // 2. Inicializar la app y la interfaz
+        const builder = new NinjaBuilder(15);
+
+        function renderUI() {
+            const container = document.getElementById('skills-container');
+            container.innerHTML = '';
+
+            document.getElementById('remaining-points').innerText = builder.maxPoints - builder.spentPoints;
+            document.getElementById('max-points').innerText = builder.maxPoints;
+
+            for (const [id, skill] of Object.entries(builder.skills)) {
+                const card = document.createElement('div');
+                card.className = 'skill-card';
+                card.innerHTML = `
+                    <div class="skill-details">
+                        <h3>${skill.name} (Nv. ${skill.currentLevel}/${skill.maxLevel})</h3>
+                        <p>${skill.desc}</p>
+                        <small>Costo por nivel: ${skill.cost} pts</small>
+                    </div>
+                    <div class="skill-controls">
+                        <button onclick="decrease('${id}')">-</button>
+                        <span>${skill.currentLevel}</span>
+                        <button onclick="increase('${id}')">+</button>
+                    </div>
+                `;
+                container.appendChild(card);
+            }
+        }
+
+        function increase(id) {
+            if (builder.allocatePoint(id)) {
+                renderUI();
+            }
+        }
+
+        function decrease(id) {
+            if (builder.removePoint(id)) {
+                renderUI();
+            }
+        }
+
+        // Cargar la interfaz por primera vez al abrir la página
+        renderUI();
+    </script>
 </body>
 </html>
