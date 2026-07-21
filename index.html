@@ -1,1 +1,50 @@
-a
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Planner - Battle for Embolia (Ninja)</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+    <header>
+        <h1>BATTLE FOR EMBOLIA - NINJA PLANNER</h1>
+        <label>Nivel del Personaje: <input type="number" id="level-input" value="1" min="1" max="50"></label>
+        <p>Puntos de Habilidad Disponibles: <span id="available-points">50</span></p>
+    </header>
+
+    <div class="planner-container">
+        <!-- Columna 1: Estadísticas -->
+        <div class="column">
+            <h2>Estadísticas</h2>
+            <div id="stats-container" class="stats-list"></div>
+        </div>
+
+        <!-- Columna 2: Equipamiento Estilo Maxroll -->
+        <div class="column">
+            <h2>Equipamiento</h2>
+            <div class="equipment-grid">
+                <div class="eq-slot" title="Cabeza"></div>
+                <div class="eq-slot" title="Pecho"></div>
+                <div class="eq-slot" title="Guantes"></div>
+                <div class="eq-slot" title="Botas"></div>
+                <div class="eq-slot" title="Arma 1"></div>
+                <div class="eq-slot" title="Arma 2"></div>
+                <div class="eq-slot" title="Anillo 1"></div>
+                <div class="eq-slot" title="Anillo 2"></div>
+                <div class="eq-slot" title="Amuleto"></div>
+            </div>
+            <p><small>Haz clic en los slots para editar objetos (Próximamente)</small></p>
+        </div>
+
+        <!-- Columna 3: Habilidades del Ninja -->
+        <div class="column">
+            <h2>Árbol de Habilidades</h2>
+            <div id="skills-container"></div>
+        </div>
+    </div>
+
+    <script src="js/ninja.js"></script>
+</body>
+</html>
