@@ -36,49 +36,52 @@ header {
     box-shadow: 0 0 15px rgba(0, 255, 65, 0.08);
 }
 
+/* Columna de habilidades más compacta y angosta */
 .column.skills-column {
-    width: 310px; 
+    width: 240px; 
 }
 
 h2 {
     border-bottom: 2px solid var(--text-color);
     padding-bottom: 8px;
-    font-size: 1.2rem;
+    font-size: 1.1rem;
     margin-top: 0;
     text-transform: uppercase;
     text-shadow: 0 0 5px rgba(0, 255, 65, 0.5);
+    text-align: center;
 }
 
 #skills-container {
     display: flex;
     flex-direction: column;
-    gap: 4px;
+    gap: 3px;
 }
 
+/* Filas más chicas y compactas */
 .skill-row {
     display: flex;
     align-items: center;
     background-color: var(--bg-skill-panel);
     border: 1px solid var(--border-skill-panel);
-    padding: 4px 6px;
-    gap: 12px;
+    padding: 3px 4px;
+    gap: 8px;
 }
 
 .row-number {
-    font-size: 1.1rem;
+    font-size: 1rem;
     font-weight: bold;
     color: #e6c687;
-    min-width: 18px;
+    min-width: 16px;
     text-align: center;
     border-right: 1px solid #333;
-    padding-right: 6px;
+    padding-right: 4px;
 }
 
-/* Grilla fija de exactamente 3 columnas por fila */
+/* Grilla estricta de 3 columnas ajustada con menos espacio entre slots */
 .row-skills {
     display: grid;
     grid-template-columns: repeat(3, 48px);
-    gap: 10px;
+    gap: 4px;
     flex-grow: 1;
 }
 
@@ -105,15 +108,14 @@ h2 {
     box-shadow: 0 0 8px rgba(0, 255, 65, 0.6);
 }
 
-/* Slot vacío completamente invisible para conservar el espacio en la grilla */
+/* Slot vacío invisible pero que mantiene el espacio fijo de la grilla de 3 columnas */
 .skill-slot.empty {
-    opacity: 0;
-    pointer-events: none;
+    visibility: hidden;
     border: none;
     background: transparent;
+    cursor: default;
 }
 
-/* Contador de puntos prolijo abajo a la derecha dentro del slot */
 .skill-points-badge {
     position: absolute;
     bottom: 2px;
