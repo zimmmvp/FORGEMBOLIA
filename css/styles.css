@@ -37,7 +37,7 @@ header {
 }
 
 .column.skills-column {
-    width: 400px; 
+    width: 340px; 
 }
 
 h2 {
@@ -49,14 +49,11 @@ h2 {
     text-shadow: 0 0 5px rgba(0, 255, 65, 0.5);
 }
 
-/* --- FORMATO DE HABILIDADES EN 10 FILAS (ESTILO JUEGO) --- */
+/* --- 10 FILAS Y EXACTAMENTE 3 COLUMNAS --- */
 #skills-container {
     display: flex;
     flex-direction: column;
-    gap: 6px;
-    max-height: 650px;
-    overflow-y: auto;
-    padding-right: 5px;
+    gap: 5px;
 }
 
 .skill-row {
@@ -64,27 +61,29 @@ h2 {
     align-items: center;
     background-color: var(--bg-skill-panel);
     border: 1px solid var(--border-skill-panel);
-    padding: 6px 8px;
-    gap: 15px;
+    padding: 4px 6px;
+    gap: 8px;
 }
 
 .row-number {
-    font-size: 1.2rem;
+    font-size: 1.1rem;
     font-weight: bold;
-    color: #e6c687; /* Color de número estilo pergamino/oro viejo como en la captura */
-    min-width: 25px;
+    color: #e6c687;
+    min-width: 20px;
     text-align: center;
     border-right: 1px solid #333;
-    padding-right: 8px;
+    padding-right: 6px;
 }
 
+/* Grilla fija de 3 columnas por fila */
 .row-skills {
-    display: flex;
-    justify-content: space-between; /* Distribuye izquierda y derecha en la fila */
+    display: grid;
+    grid-template-columns: repeat(3, 48px);
+    gap: 8px;
     flex-grow: 1;
 }
 
-/* Slots de habilidades más grandes (48x48px) con posición relativa para el tooltip */
+/* Slots de habilidades (48x48px) */
 .skill-slot {
     width: 48px;
     height: 48px;
@@ -108,7 +107,7 @@ h2 {
     box-shadow: 0 0 8px rgba(0, 255, 65, 0.6);
 }
 
-/* Slot vacío invisible para mantener la alineación izquierda/derecha exacta */
+/* Slot vacío transparente para mantener los espacios de la grilla de 3 columnas */
 .skill-slot.empty {
     visibility: hidden;
     border: none;
@@ -116,7 +115,6 @@ h2 {
     cursor: default;
 }
 
-/* Contador de puntos dentro del slot (abajo a la derecha) */
 .skill-points-badge {
     position: absolute;
     bottom: 2px;
@@ -130,7 +128,7 @@ h2 {
     border-radius: 3px;
 }
 
-/* --- TOOLTIP DE DESCRIPCIÓN AL PASAR EL MOUSE --- */
+/* --- TOOLTIP DE DESCRIPCIÓN --- */
 .skill-tooltip {
     visibility: hidden;
     width: 220px;
@@ -141,7 +139,7 @@ h2 {
     padding: 8px;
     position: absolute;
     z-index: 100;
-    bottom: 125%; /* Aparece arriba del slot */
+    bottom: 125%;
     left: 50%;
     transform: translateX(-50%);
     opacity: 0;
