@@ -1,1 +1,183 @@
+:root {
+    --bg-main: #121212;
+    --text-color: #00ff41;
+    --bg-slot: #1a1a1e;
+    --border-slot: #333;
+    --bg-skill-panel: #0e0e10;
+    --border-skill-panel: #444;
+}
 
+body {
+    background-color: var(--bg-main);
+    color: var(--text-color);
+    font-family: 'Courier New', Courier, monospace;
+    margin: 0;
+    padding: 20px;
+}
+
+header {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.planner-container {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 20px;
+    align-items: flex-start;
+}
+
+.column {
+    background-color: var(--bg-slot);
+    border: 2px solid var(--border-slot);
+    padding: 15px;
+    width: 320px;
+    box-shadow: 0 0 15px rgba(0, 255, 65, 0.08);
+}
+
+.column.skills-column {
+    width: 340px; 
+}
+
+h2 {
+    border-bottom: 2px solid var(--text-color);
+    padding-bottom: 8px;
+    font-size: 1.3rem;
+    margin-top: 0;
+    text-transform: uppercase;
+    text-shadow: 0 0 5px rgba(0, 255, 65, 0.5);
+}
+
+/* --- 10 FILAS Y EXACTAMENTE 3 COLUMNAS --- */
+#skills-container {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.skill-row {
+    display: flex;
+    align-items: center;
+    background-color: var(--bg-skill-panel);
+    border: 1px solid var(--border-skill-panel);
+    padding: 4px 6px;
+    gap: 8px;
+}
+
+.row-number {
+    font-size: 1.1rem;
+    font-weight: bold;
+    color: #e6c687;
+    min-width: 20px;
+    text-align: center;
+    border-right: 1px solid #333;
+    padding-right: 6px;
+}
+
+/* Grilla fija de 3 columnas por fila */
+.row-skills {
+    display: grid;
+    grid-template-columns: repeat(3, 48px);
+    gap: 8px;
+    flex-grow: 1;
+}
+
+/* Slots de habilidades (48x48px) */
+.skill-slot {
+    width: 48px;
+    height: 48px;
+    background-color: var(--bg-main);
+    border: 2px solid #555;
+    position: relative;
+    cursor: pointer;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.skill-slot:hover {
+    border-color: var(--text-color);
+}
+
+.skill-slot.active {
+    border-color: var(--text-color);
+    box-shadow: 0 0 8px rgba(0, 255, 65, 0.6);
+}
+
+/* Slot vacío transparente para mantener los espacios de la grilla de 3 columnas */
+.skill-slot.empty {
+    visibility: hidden;
+    border: none;
+    background: transparent;
+    cursor: default;
+}
+
+.skill-points-badge {
+    position: absolute;
+    bottom: 2px;
+    right: 2px;
+    font-size: 0.7rem;
+    font-weight: bold;
+    background: rgba(0, 0, 0, 0.85);
+    color: var(--text-color);
+    padding: 1px 3px;
+    border: 1px solid #333;
+    border-radius: 3px;
+}
+
+/* --- TOOLTIP DE DESCRIPCIÓN --- */
+.skill-tooltip {
+    visibility: hidden;
+    width: 220px;
+    background-color: #111;
+    color: #00ff41;
+    text-align: left;
+    border: 2px solid var(--text-color);
+    padding: 8px;
+    position: absolute;
+    z-index: 100;
+    bottom: 125%;
+    left: 50%;
+    transform: translateX(-50%);
+    opacity: 0;
+    transition: opacity 0.2s;
+    font-size: 0.75rem;
+    box-shadow: 0 0 10px rgba(0, 255, 65, 0.4);
+    pointer-events: none;
+}
+
+.skill-slot:hover .skill-tooltip {
+    visibility: visible;
+    opacity: 1;
+}
+
+/* --- EQUIPAMIENTO Y ESTADÍSTICAS --- */
+.equipment-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 8px;
+    justify-items: center;
+}
+
+.eq-slot {
+    width: 48px;
+    height: 48px;
+    background-color: var(--bg-main);
+    border: 2px solid var(--border-slot);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.eq-slot:hover {
+    border-color: var(--text-color);
+}
+
+.stats-list p {
+    margin: 5px 0;
+    font-size: 0.9rem;
+}
