@@ -81,7 +81,7 @@ h2 {
 .row-skills {
     display: grid;
     grid-template-columns: repeat(3, 48px);
-    gap: 4px;
+    gap: 24px;
     flex-grow: 1;
 }
 
