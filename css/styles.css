@@ -36,9 +36,8 @@ header {
     box-shadow: 0 0 15px rgba(0, 255, 65, 0.08);
 }
 
-/* Columna del árbol de habilidades más ancha para las 10 filas */
 .column.skills-column {
-    width: 380px; 
+    width: 400px; 
 }
 
 h2 {
@@ -50,13 +49,13 @@ h2 {
     text-shadow: 0 0 5px rgba(0, 255, 65, 0.5);
 }
 
-/* --- FORMATO DE 10 FILAS TIPO JUEGO --- */
+/* --- FORMATO DE HABILIDADES EN 10 FILAS (ESTILO JUEGO) --- */
 #skills-container {
     display: flex;
     flex-direction: column;
     gap: 6px;
-    max-height: 600px;
-    overflow-y: auto; /* Por si excede la pantalla, permite scroll interno */
+    max-height: 650px;
+    overflow-y: auto;
     padding-right: 5px;
 }
 
@@ -66,34 +65,31 @@ h2 {
     background-color: var(--bg-skill-panel);
     border: 1px solid var(--border-skill-panel);
     padding: 6px 8px;
-    gap: 10px;
+    gap: 15px;
 }
 
-/* Número de Fila (1 al 10) */
 .row-number {
-    font-size: 1.1rem;
+    font-size: 1.2rem;
     font-weight: bold;
-    color: var(--text-color);
-    min-width: 20px;
+    color: #e6c687; /* Color de número estilo pergamino/oro viejo como en la captura */
+    min-width: 25px;
     text-align: center;
     border-right: 1px solid #333;
-    padding-right: 6px;
+    padding-right: 8px;
 }
 
-/* Contenedor de las habilidades en esa fila (hasta 3 columnas) */
 .row-skills {
     display: flex;
-    gap: 6px;
+    justify-content: space-between; /* Distribuye izquierda y derecha en la fila */
     flex-grow: 1;
-    justify-content: flex-start;
 }
 
-/* Cada slot de habilidad individual */
+/* Slots de habilidades más grandes (48x48px) con posición relativa para el tooltip */
 .skill-slot {
-    width: 38px;
-    height: 38px;
+    width: 48px;
+    height: 48px;
     background-color: var(--bg-main);
-    border: 1px solid var(--border-slot);
+    border: 2px solid #555;
     position: relative;
     cursor: pointer;
     background-size: cover;
@@ -109,18 +105,55 @@ h2 {
 
 .skill-slot.active {
     border-color: var(--text-color);
-    box-shadow: 0 0 5px rgba(0, 255, 65, 0.5);
+    box-shadow: 0 0 8px rgba(0, 255, 65, 0.6);
 }
 
-/* Contador de puntos dentro del slot */
+/* Slot vacío invisible para mantener la alineación izquierda/derecha exacta */
+.skill-slot.empty {
+    visibility: hidden;
+    border: none;
+    background: transparent;
+    cursor: default;
+}
+
+/* Contador de puntos dentro del slot (abajo a la derecha) */
 .skill-points-badge {
     position: absolute;
-    bottom: 1px;
+    bottom: 2px;
     right: 2px;
-    font-size: 0.65rem;
-    background: rgba(0, 0, 0, 0.8);
+    font-size: 0.7rem;
+    font-weight: bold;
+    background: rgba(0, 0, 0, 0.85);
     color: var(--text-color);
-    padding: 0 2px;
+    padding: 1px 3px;
+    border: 1px solid #333;
+    border-radius: 3px;
+}
+
+/* --- TOOLTIP DE DESCRIPCIÓN AL PASAR EL MOUSE --- */
+.skill-tooltip {
+    visibility: hidden;
+    width: 220px;
+    background-color: #111;
+    color: #00ff41;
+    text-align: left;
+    border: 2px solid var(--text-color);
+    padding: 8px;
+    position: absolute;
+    z-index: 100;
+    bottom: 125%; /* Aparece arriba del slot */
+    left: 50%;
+    transform: translateX(-50%);
+    opacity: 0;
+    transition: opacity 0.2s;
+    font-size: 0.75rem;
+    box-shadow: 0 0 10px rgba(0, 255, 65, 0.4);
+    pointer-events: none;
+}
+
+.skill-slot:hover .skill-tooltip {
+    visibility: visible;
+    opacity: 1;
 }
 
 /* --- EQUIPAMIENTO Y ESTADÍSTICAS --- */
