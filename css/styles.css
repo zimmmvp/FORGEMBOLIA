@@ -37,13 +37,13 @@ header {
 }
 
 .column.skills-column {
-    width: 340px; 
+    width: 310px; 
 }
 
 h2 {
     border-bottom: 2px solid var(--text-color);
     padding-bottom: 8px;
-    font-size: 1.3rem;
+    font-size: 1.2rem;
     margin-top: 0;
     text-transform: uppercase;
     text-shadow: 0 0 5px rgba(0, 255, 65, 0.5);
@@ -52,7 +52,7 @@ h2 {
 #skills-container {
     display: flex;
     flex-direction: column;
-    gap: 5px;
+    gap: 4px;
 }
 
 .skill-row {
@@ -61,23 +61,24 @@ h2 {
     background-color: var(--bg-skill-panel);
     border: 1px solid var(--border-skill-panel);
     padding: 4px 6px;
-    gap: 8px;
+    gap: 12px;
 }
 
 .row-number {
     font-size: 1.1rem;
     font-weight: bold;
     color: #e6c687;
-    min-width: 20px;
+    min-width: 18px;
     text-align: center;
     border-right: 1px solid #333;
     padding-right: 6px;
 }
 
+/* Grilla fija de exactamente 3 columnas por fila */
 .row-skills {
     display: grid;
     grid-template-columns: repeat(3, 48px);
-    gap: 8px;
+    gap: 10px;
     flex-grow: 1;
 }
 
@@ -104,24 +105,27 @@ h2 {
     box-shadow: 0 0 8px rgba(0, 255, 65, 0.6);
 }
 
+/* Slot vacío completamente invisible para conservar el espacio en la grilla */
 .skill-slot.empty {
-    visibility: hidden;
+    opacity: 0;
+    pointer-events: none;
     border: none;
     background: transparent;
-    cursor: default;
 }
 
+/* Contador de puntos prolijo abajo a la derecha dentro del slot */
 .skill-points-badge {
     position: absolute;
     bottom: 2px;
     right: 2px;
-    font-size: 0.7rem;
+    font-size: 0.65rem;
     font-weight: bold;
-    background: rgba(0, 0, 0, 0.85);
+    background: rgba(0, 0, 0, 0.9);
     color: var(--text-color);
-    padding: 1px 3px;
-    border: 1px solid #333;
-    border-radius: 3px;
+    padding: 1px 2px;
+    border: 1px solid #444;
+    border-radius: 2px;
+    line-height: 1;
 }
 
 .skill-tooltip {
