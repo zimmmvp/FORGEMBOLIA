@@ -19,33 +19,22 @@ document.addEventListener("DOMContentLoaded", () => {
             "defensa": 1,
             "dps": 1
         },
+        // Distribución exacta basada en tus capturas de pantalla (Filas 1 a 10)
         "rows": [
-            { row: 1, skills: [{ id: 1, name: "Inicio Combo", max_points: 1, description: "Golpea al enemigo por 25 (Ataque). Comienza un COMBO.", img: "images/skills/inicio_combo.png" }] },
-            { row: 2, skills: [{ id: 2, name: "Sin Escape", max_points: 1, description: "Tus ataques no pueden ser evitados por otros jugadores.", img: "images/skills/sin_escape.png" }] },
-            { row: 3, skills: [{ id: 3, name: "Golpe de Sombra Nivel 1", max_points: 5, description: "Golpea al enemigo por 16 (Ataque). Crítico: +50% probabilidad crítico.", img: "images/skills/golpe_sombra_1.png" }] },
-            { row: 4, skills: [{ id: 4, name: "Combo de Dagas Dobles", max_points: 5, description: "Permite usar COMBO. Podes hacer más combos.", img: "images/skills/combo_dagas.png" }] },
-            { row: 5, skills: [{ id: 5, name: "Golpe Roba Vida", max_points: 5, description: "Golpea al enemigo por 14 (Ataque). Te cura un 10% de la vida.", img: "images/skills/roba_vida.png" }] },
-            { row: 6, skills: [
-                { id: 6, name: "Golpe Salvaje", max_points: 5, description: "Golpea al enemigo por 18 (Ataque). Crítico aumentado.", img: "images/skills/golpe_salvaje.png" },
-                { id: 7, name: "Alma de Sombra", max_points: 5, description: "Aumenta la velocidad de movimiento +12% y evasión +1.", img: "images/skills/alma_sombra.png" }
-            ] },
-            { row: 7, skills: [
-                { id: 8, name: "Golpe de Sombra Nivel 3", max_points: 5, description: "Golpea al enemigo por 16 (Ataque). En Combo: daña en área.", img: "images/skills/golpe_sombra_3.png" },
-                { id: 9, name: "Golpe de Sombra Nivel 6", max_points: 5, description: "Golpea al enemigo por 25 (Ataque). Próximo ataque evadido.", img: "images/skills/golpe_sombra_6.png" },
-                { id: 10, name: "Iris Envolvente", max_points: 5, description: "Un porcentaje de tu evasión se suma a tu daño de ataque.", img: "images/skills/iris_envolvente.png" }
-            ] },
-            { row: 8, skills: [
-                { id: 11, name: "Ráfaga", max_points: 5, description: "Aumenta probabilidad de golpe crítico y mágico al grupo.", img: "images/skills/rafaga.png" },
-                { id: 12, name: "Evasión Mística", max_points: 5, description: "Cada vez que evadas un golpe, te curará +6 de Vida.", img: "images/skills/evasion_mistica.png" }
-            ] },
-            { row: 9, skills: [
-                { id: 13, name: "Colmillo Azul", max_points: 5, description: "Recupera de Mana cuando realizas un golpe crítico.", img: "images/skills/colmillo_azul.png" },
+            { row: 1, left: { id: 1, name: "Inicio Combo", max_points: 1, description: "Golpea al enemigo por 25 (Ataque). Comienza un COMBO.", img: "images/skills/inicio_combo.png" }, right: { id: 2, name: "Sin Escape", max_points: 1, description: "Tus ataques no pueden ser evitados por otros jugadores.", img: "images/skills/sin_escape.png" } },
+            { row: 2, left: { id: 3, name: "Golpe de Sombra Nivel 1", max_points: 5, description: "Golpea al enemigo por 16 (Ataque). Crítico: +50% probabilidad crítico.", img: "images/skills/golpe_sombra_1.png" }, right: { id: 4, name: "Combo de Dagas Dobles", max_points: 5, description: "Permite usar COMBO. Podes hacer más combos.", img: "images/skills/combo_dagas.png" } },
+            { row: 3, left: { id: 5, name: "Golpe Roba Vida", max_points: 5, description: "Golpea al enemigo por 14 (Ataque). Te cura un 10% de la vida.", img: "images/skills/roba_vida.png" }, right: null },
+            { row: 4, left: { id: 6, name: "Golpe Salvaje", max_points: 5, description: "Golpea al enemigo por 18 (Ataque). Crítico aumentado.", img: "images/skills/golpe_salvaje.png" }, right: { id: 7, name: "Alma de Sombra", max_points: 5, description: "Aumenta la velocidad de movimiento +12% y evasión +1.", img: "images/skills/alma_sombra.png" } },
+            { row: 5, left: { id: 8, name: "Golpe de Sombra Nivel 3", max_points: 5, description: "Golpea al enemigo por 16 (Ataque). En Combo: daña en área.", img: "images/skills/golpe_sombra_3.png" }, right: null },
+            { row: 6, left: { id: 9, name: "Golpe de Sombra Nivel 6", max_points: 5, description: "Golpea al enemigo por 25 (Ataque). Próximo ataque evadido.", img: "images/skills/golpe_sombra_6.png" }, right: { id: 10, name: "Iris Envolvente", max_points: 5, description: "Un porcentaje de tu evasión se suma a tu daño de ataque.", img: "images/skills/iris_envolvente.png" } },
+            { row: 7, left: null, right: { id: 11, name: "Ráfaga", max_points: 5, description: "Aumenta probabilidad de golpe crítico y mágico al grupo.", img: "images/skills/rafaga.png" } },
+            { row: 8, left: null, right: { id: 12, name: "Evasión Mística", max_points: 5, description: "Cada vez que evadas un golpe, te curará +6 de Vida.", img: "images/skills/evasion_mistica.png" } },
+            { row: 9, left: null, right: { id: 13, name: "Colmillo Azul", max_points: 5, description: "Recupera de Mana cuando realizas un golpe crítico.", "img": "images/skills/colmillo_azul.png" } },
+            { row: 10, left: [
                 { id: 14, name: "Golpe Final", max_points: 5, description: "Consume todos los puntos de combo para hacer más daño.", img: "images/skills/golpe_final.png" },
-                { id: 15, name: "Técnica Definitiva", max_points: 5, description: "Se vuelve invulnerable al daño durante 6 segundos.", img: "images/skills/tecnica_definitiva.png" }
-            ] },
-            { row: 10, skills: [
+                { id: 15, name: "Técnica Definitiva", max_points: 5, description: "Se vuelve invulnerable al daño durante 6 segundos.", img: "images/skills/tecnica_definitiva.png" },
                 { id: 16, name: "Espejismo Estático", max_points: 5, description: "Cuando evadas un ataque, un rayo cae en el área.", img: "images/skills/espejismo.png" }
-            ] }
+            ], right: null }
         ]
     };
 
@@ -53,11 +42,15 @@ document.addEventListener("DOMContentLoaded", () => {
     let spentSkillPoints = 0;
     let skillPointsAllocation = {};
 
-    data.rows.forEach(row => {
-        row.skills.forEach(skill => {
-            skillPointsAllocation[skill.id] = 0;
+    // Inicializar puntos recolectando por IDs
+    function initPoints() {
+        data.rows.forEach(rowData => {
+            if (rowData.left && !Array.isArray(rowData.left)) skillPointsAllocation[rowData.left.id] = 0;
+            if (Array.isArray(rowData.left)) rowData.left.forEach(s => skillPointsAllocation[s.id] = 0);
+            if (rowData.right) skillPointsAllocation[rowData.right.id] = 0;
         });
-    });
+    }
+    initPoints();
 
     const levelInput = document.getElementById("level-input");
     const pointsDisplay = document.getElementById("available-points");
@@ -72,6 +65,51 @@ document.addEventListener("DOMContentLoaded", () => {
             html += `<p><strong>${key.toUpperCase().replace('_', ' ')}:</strong> ${base + scaling}</p>`;
         }
         statsContainer.innerHTML = html;
+    }
+
+    function createSkillSlot(skill) {
+        if (!skill) {
+            const empty = document.createElement("div");
+            empty.className = "skill-slot empty";
+            return empty;
+        }
+
+        const points = skillPointsAllocation[skill.id];
+        const slot = document.createElement("div");
+        slot.className = `skill-slot ${points > 0 ? 'active' : ''}`;
+        slot.style.backgroundImage = `url('${skill.img}')`;
+
+        slot.innerHTML = `
+            <span class="skill-points-badge">${points}/${skill.max_points}</span>
+            <div class="skill-tooltip">
+                <strong>${skill.name}</strong><br>
+                <span>Puntos: ${points}/${skill.max_points}</span><br>
+                <hr style="border-color:#333; margin: 4px 0;">
+                <span>${skill.description}</span>
+            </div>
+        `;
+
+        slot.addEventListener("click", (e) => {
+            e.preventDefault();
+            if (spentSkillPoints < data.max_skill_points && points < skill.max_points) {
+                skillPointsAllocation[skill.id]++;
+                spentSkillPoints++;
+                pointsDisplay.textContent = data.max_skill_points - spentSkillPoints;
+                renderSkills();
+            }
+        });
+
+        slot.addEventListener("contextmenu", (e) => {
+            e.preventDefault();
+            if (skillPointsAllocation[skill.id] > 0) {
+                skillPointsAllocation[skill.id]--;
+                spentSkillPoints--;
+                pointsDisplay.textContent = data.max_skill_points - spentSkillPoints;
+                renderSkills();
+            }
+        });
+
+        return slot;
     }
 
     function renderSkills() {
@@ -89,37 +127,20 @@ document.addEventListener("DOMContentLoaded", () => {
             const skillsFlex = document.createElement("div");
             skillsFlex.className = "row-skills";
 
-            rowData.skills.forEach(skill => {
-                const points = skillPointsAllocation[skill.id];
-                const slot = document.createElement("div");
-                slot.className = `skill-slot ${points > 0 ? 'active' : ''}`;
-                slot.style.backgroundImage = `url('${skill.img}')`;
-                slot.title = `${skill.name} (${points}/${skill.max_points})\n${skill.description}`;
-
-                slot.innerHTML = `<span class="skill-points-badge">${points}</span>`;
-
-                slot.addEventListener("click", (e) => {
-                    e.preventDefault();
-                    if (spentSkillPoints < data.max_skill_points && points < skill.max_points) {
-                        skillPointsAllocation[skill.id]++;
-                        spentSkillPoints++;
-                        pointsDisplay.textContent = data.max_skill_points - spentSkillPoints;
-                        renderSkills();
-                    }
+            // Manejo especial para la fila 10 que tiene 3 habilidades juntas
+            if (Array.isArray(rowData.left)) {
+                const groupDiv = document.createElement("div");
+                groupDiv.style.display = "flex";
+                groupDiv.style.gap = "8px";
+                rowData.left.forEach(skill => {
+                    groupDiv.appendChild(createSkillSlot(skill));
                 });
-
-                slot.addEventListener("contextmenu", (e) => {
-                    e.preventDefault();
-                    if (skillPointsAllocation[skill.id] > 0) {
-                        skillPointsAllocation[skill.id]--;
-                        spentSkillPoints--;
-                        pointsDisplay.textContent = data.max_skill_points - spentSkillPoints;
-                        renderSkills();
-                    }
-                });
-
-                skillsFlex.appendChild(slot);
-            });
+                skillsFlex.appendChild(groupDiv);
+                skillsFlex.appendChild(createSkillSlot(null)); // Relleno
+            } else {
+                skillsFlex.appendChild(createSkillSlot(rowData.left));
+                skillsFlex.appendChild(createSkillSlot(rowData.right));
+            }
 
             rowDiv.appendChild(skillsFlex);
             skillsContainer.appendChild(rowDiv);
