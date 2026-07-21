@@ -82,7 +82,7 @@ h2 {
 .row-skills {
     display: grid;
     grid-template-columns: repeat(3, 48px);
-    gap: 15px;
+    gap: 6px;
     justify-content: center;
 }
 
@@ -102,4 +102,83 @@ h2 {
 
 .skill-slot:hover {
     border-color: var(--text-color);
+}
+
+.skill-slot.active {
+    border-color: var(--text-color);
+    box-shadow: 0 0 8px rgba(0, 255, 65, 0.6);
+}
+
+/* Slot vacío invisible pero que mantiene la estructura perfecta de la grilla */
+.skill-slot.empty {
+    visibility: hidden;
+    border: none;
+    background: transparent;
+    cursor: default;
+}
+
+.skill-points-badge {
+    position: absolute;
+    bottom: 2px;
+    right: 2px;
+    font-size: 0.65rem;
+    font-weight: bold;
+    background: rgba(0, 0, 0, 0.9);
+    color: var(--text-color);
+    padding: 1px 2px;
+    border: 1px solid #444;
+    border-radius: 2px;
+    line-height: 1;
+}
+
+.skill-tooltip {
+    visibility: hidden;
+    width: 220px;
+    background-color: #111;
+    color: #00ff41;
+    text-align: left;
+    border: 2px solid var(--text-color);
+    padding: 8px;
+    position: absolute;
+    z-index: 100;
+    bottom: 125%;
+    left: 50%;
+    transform: translateX(-50%);
+    opacity: 0;
+    transition: opacity 0.2s;
+    font-size: 0.75rem;
+    box-shadow: 0 0 10px rgba(0, 255, 65, 0.4);
+    pointer-events: none;
+}
+
+.skill-slot:hover .skill-tooltip {
+    visibility: visible;
+    opacity: 1;
+}
+
+.equipment-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 8px;
+    justify-items: center;
+}
+
+.eq-slot {
+    width: 48px;
+    height: 48px;
+    background-color: var(--bg-main);
+    border: 2px solid var(--border-slot);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.eq-slot:hover {
+    border-color: var(--text-color);
+}
+
+.stats-list p {
+    margin: 5px 0;
+    font-size: 0.9rem;
 }
